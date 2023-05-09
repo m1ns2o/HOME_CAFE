@@ -1,0 +1,13 @@
+com.example.knue_home_cafe.app-jetified-window-java-1.0.0-beta04-0 /Users/m1ns2o/.gradle/caches/transforms-3/006d93cd422dbc43e89591147c2de572/transformed/jetified-window-java-1.0.0-beta04/res
+com.example.knue_home_cafe.app-core-1.6.0-1 /Users/m1ns2o/.gradle/caches/transforms-3/4ca28c4a71705f8a687c69dda140a277/transformed/core-1.6.0/res
+com.example.knue_home_cafe.app-jetified-annotation-experimental-1.1.0-2 /Users/m1ns2o/.gradle/caches/transforms-3/8965c941cf4bee4d72541b965c7c9d39/transformed/jetified-annotation-experimental-1.1.0/res
+com.example.knue_home_cafe.app-jetified-window-1.0.0-beta04-3 /Users/m1ns2o/.gradle/caches/transforms-3/dee59bb480020f42d53c2ea15e4501f7/transformed/jetified-window-1.0.0-beta04/res
+com.example.knue_home_cafe.app-debug-4 /Users/m1ns2o/project/android/test_folder/HOME_CAFE/android/app/src/debug/res
+com.example.knue_home_cafe.app-main-5 /Users/m1ns2o/project/android/test_folder/HOME_CAFE/android/app/src/main/res
+com.example.knue_home_cafe.app-pngs-6 /Users/m1ns2o/project/android/test_folder/HOME_CAFE/build/app/generated/res/pngs/debug
+com.example.knue_home_cafe.app-resValues-7 /Users/m1ns2o/project/android/test_folder/HOME_CAFE/build/app/generated/res/resValues/debug
+com.example.knue_home_cafe.app-rs-8 /Users/m1ns2o/project/android/test_folder/HOME_CAFE/build/app/generated/res/rs/debug
+com.example.knue_home_cafe.app-mergeDebugResources-9 /Users/m1ns2o/project/android/test_folder/HOME_CAFE/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.example.knue_home_cafe.app-mergeDebugResources-10 /Users/m1ns2o/project/android/test_folder/HOME_CAFE/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.example.knue_home_cafe.app-merged_res-11 /Users/m1ns2o/project/android/test_folder/HOME_CAFE/build/app/intermediates/merged_res/debug
+com.example.knue_home_cafe.app-packaged_res-12 /Users/m1ns2o/project/android/test_folder/HOME_CAFE/build/shared_preferences_android/intermediates/packaged_res/debug
