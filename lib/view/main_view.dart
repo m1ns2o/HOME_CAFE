@@ -10,79 +10,67 @@ class main_view extends StatefulWidget {
 }
 
 class _main_viewState extends State<main_view> {
-  // static late SharedPreferences prefs;
-
-  // void initState() {
-  //   super.initState();
-  //   print("initState");
-  //   load_count();
-  // }
-  //
-  // late final int load_value;
-  //
-  late int tira_count;
-  Future<int> getStringFromSharedPref(String key) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    int value = await prefs.getInt(key) ?? 0;
-    print("getstring");
-    print(value);
-    return value;
-  }
-
-  late int myVariable;
-  Future<void> loadPreferences() async {
+  Future<Map> get_count() async {
+    Map data = new Map();
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    int myValue = prefs.getInt('티라미수') ?? 0;
-    if (myValue != null) {
-      myVariable = myValue;
-    }
-    print(myVariable);
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    setcount();
-  }
-
-  Future<menu_data> setcount() async {
-    loadPreferences();
-    menu_data tira_data = menu_data("티라미수", 3500, myVariable);
-    // menu_container tira =
-    //         menu_container(menu: "티라미수", cost: 3500, count: myVariable),
-    //     oreo = menu_container(menu: "오레오", cost: 3500, count: 0),
-    //     americano = menu_container(menu: "아메리카노", cost: 2000, count: 0),
-    //     jori = menu_container(menu: "조리퐁라떼", cost: 3500, count: 0),
-    //     ogok = menu_container(menu: "오곡라떼", cost: 3000, count: 0);
-    print("future builder");
-    print(tira_data.menu);
-    return tira_data;
+    data['tira'] = prefs.getInt('티라미수') ?? 0;
+    data['oreo'] = prefs.getInt('오레오') ?? 0;
+    data['americano'] = prefs.getInt('아메리카노') ?? 0;
+    data['jori'] = prefs.getInt('조리퐁라떼') ?? 0;
+    data['ogok'] = prefs.getInt('오곡라떼') ?? 0;
+    return data;
   }
 
   @override
   Widget build(BuildContext context) {
-    // print(tira.count);
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(40),
-        child: FutureBuilder<menu_data>(
-          future: setcount(),
-          builder: (context, AsyncSnapshot<menu_data> snapshot) {
-            if (!snapshot.hasData) {
+        child: FutureBuilder<Map>(
+          future: get_count(),
+          builder: (context, AsyncSnapshot<Map> snapshot) {
+            if (snapshot.hasError) {
+              return Text("Error: ${snapshot.error}");
+            } else if (!snapshot.hasData) {
               return Center(
                 child: CircularProgressIndicator(),
               );
+            } else {
+              return Column(
+                children: [
+                  Expanded(
+                      child: menu_container(
+                    menu: "티라미수",
+                    cost: 3500,
+                    count: snapshot.data!['tira'],
+                  )),
+                  Expanded(
+                      child: menu_container(
+                    menu: "오레오",
+                    cost: 3500,
+                    count: snapshot.data!['oreo'],
+                  )),
+                  Expanded(
+                      child: menu_container(
+                    menu: "아메리카노",
+                    cost: 3500,
+                    count: snapshot.data!['americano'],
+                  )),
+                  Expanded(
+                      child: menu_container(
+                    menu: "조리퐁라떼",
+                    cost: 3500,
+                    count: snapshot.data!['jori'],
+                  )),
+                  Expanded(
+                      child: menu_container(
+                    menu: "오곡라떼",
+                    cost: 3500,
+                    count: snapshot.data!['ogok'],
+                  )),
+                ],
+              );
             }
-            return Column(
-              children: [
-                Expanded(
-                    child: menu_container(
-                  menu: snapshot.data!.menu,
-                  cost: snapshot.data!.cost,
-                  count: snapshot.data!.count,
-                )),
-              ],
-            );
           },
         ),
       ),
