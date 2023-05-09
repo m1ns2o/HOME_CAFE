@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:async/async.dart';
+// import 'package:async/async.dart';
 
 class main_view extends StatefulWidget {
   const main_view({Key? key}) : super(key: key);
@@ -42,35 +42,48 @@ class _main_viewState extends State<main_view> {
   @override
   void initState() {
     super.initState();
-    // int val = getStringFromSharedPref("티라미수");
-    // print(val);
-    // loadPreferences();
+    setcount();
+  }
 
-    // getStringFromSharedPref("티라미수").then((value) => this.tira_count = value);
+  Future<menu_data> setcount() async {
+    loadPreferences();
+    menu_data tira_data = menu_data("티라미수", 3500, myVariable);
+    // menu_container tira =
+    //         menu_container(menu: "티라미수", cost: 3500, count: myVariable),
+    //     oreo = menu_container(menu: "오레오", cost: 3500, count: 0),
+    //     americano = menu_container(menu: "아메리카노", cost: 2000, count: 0),
+    //     jori = menu_container(menu: "조리퐁라떼", cost: 3500, count: 0),
+    //     ogok = menu_container(menu: "오곡라떼", cost: 3000, count: 0);
+    print("future builder");
+    print(tira_data.menu);
+    return tira_data;
   }
 
   @override
   Widget build(BuildContext context) {
-    loadPreferences();
-    menu_container tira =
-            menu_container(menu: "티라미수", cost: 3500, count: myVariable),
-        oreo = menu_container(menu: "오레오", cost: 3500, count: 0),
-        americano = menu_container(menu: "아메리카노", cost: 2000, count: 0),
-        jori = menu_container(menu: "조리퐁라떼", cost: 3500, count: 0),
-        ogok = menu_container(menu: "오곡라떼", cost: 3000, count: 0);
     // print(tira.count);
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(40),
-        child: Column(
-          children: [
-            Expanded(
-                child: menu_container(
-              menu: tira.menu,
-              cost: tira.cost,
-              count: tira.count,
-            )),
-          ],
+        child: FutureBuilder<menu_data>(
+          future: setcount(),
+          builder: (context, AsyncSnapshot<menu_data> snapshot) {
+            if (!snapshot.hasData) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+            return Column(
+              children: [
+                Expanded(
+                    child: menu_container(
+                  menu: snapshot.data!.menu,
+                  cost: snapshot.data!.cost,
+                  count: snapshot.data!.count,
+                )),
+              ],
+            );
+          },
         ),
       ),
     );
