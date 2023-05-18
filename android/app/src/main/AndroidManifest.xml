@@ -1,9 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.knue_home_cafe">
    <application
-        android:label="knue_home_cafe"
+        android:label="가정과 카페"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/cafe">
         <activity
             android:name=".MainActivity"
             android:exported="true"

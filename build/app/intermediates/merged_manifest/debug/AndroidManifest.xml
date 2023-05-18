@@ -18,8 +18,8 @@
         android:name="android.app.Application"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="knue_home_cafe" >
+        android:icon="@mipmap/cafe"
+        android:label="가정과 카페" >
         <activity
             android:name="com.example.knue_home_cafe.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

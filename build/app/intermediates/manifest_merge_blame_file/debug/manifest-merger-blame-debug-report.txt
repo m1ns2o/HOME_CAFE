@@ -13,16 +13,16 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->/Users/m1ns2o/project/android/test_folder/HOME_CAFE/android/app/src/debug/AndroidManifest.xml:7:5-66
-15-->/Users/m1ns2o/project/android/test_folder/HOME_CAFE/android/app/src/debug/AndroidManifest.xml:7:22-64
+15-->/Users/m1ns2o/project/android/HOME_CAFE/android/app/src/debug/AndroidManifest.xml:7:5-66
+15-->/Users/m1ns2o/project/android/HOME_CAFE/android/app/src/debug/AndroidManifest.xml:7:22-64
 16
 17    <application
 18        android:name="android.app.Application"
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 19-->[androidx.core:core:1.6.0] /Users/m1ns2o/.gradle/caches/transforms-3/4ca28c4a71705f8a687c69dda140a277/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
 20        android:debuggable="true"
-21        android:icon="@mipmap/ic_launcher"
-22        android:label="knue_home_cafe" >
+21        android:icon="@mipmap/cafe"
+22        android:label="가정과 카페" >
 23        <activity
 24            android:name="com.example.knue_home_cafe.MainActivity"
 25            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
