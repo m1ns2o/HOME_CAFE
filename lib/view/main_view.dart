@@ -54,7 +54,7 @@ class _main_viewState extends State<main_view> {
               ),
               Image.asset(
                 'asset/image/coffee.png',
-                height: MediaQuery.of(context).size.width / 4 * 1,
+                height: MediaQuery.of(context).size.width / 3 * 1,
               ),
               const SizedBox(
                 height: 30,
